@@ -90,3 +90,20 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# Mac OS X custom attribute files
+.DS_Store
+.idea
+print_output.html
+l2-integration.db
+ehthumbs.db
+Icon
+Thumbs.db
+.tmtags
+.idea/*
+tags
+vendor.tags
+tmtagsHistory
+*.sublime-project
+*.sublime-workspace
+.bundle
