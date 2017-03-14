@@ -19,11 +19,12 @@ def loadSettings(settingsFile):
     return settings
 
 
-appSettings = loadSettings("../settings.txt")
+if __name__ == '__main__':
+    appSettings = loadSettings("../settings.txt")
 
-firstSetting = appSettings[0].rstrip()
-secondSetting = appSettings[1].rstrip()
+    firstSetting = appSettings[0].rstrip()
+    secondSetting = appSettings[1].rstrip()
 
 
-print(firstSetting)
-print(secondSetting)
+    print(firstSetting)
+    print(secondSetting)
