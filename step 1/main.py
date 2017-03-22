@@ -1,8 +1,10 @@
 #
-#   Cisco Network Services Orchestrator(NSO) Sample App
+#   Cisco AMP for Endpoints Sample App
 #       v.01
 #
-#   Joel Fernandez(joelfern@cisco.com)
+#   Glenn Quah(glqjuah@cisco.com)
+#   Vorachat Nantasupawatana (vnantasu@cisco.com)
+#   Iman Arifin
 #       Feb 2017
 #
 #       This class provides methods to facilitates
@@ -30,7 +32,6 @@ import sys
 import json
 from Wrapper_API import  Wrapper_API
 
-# NOT ABLE TO WORK IF DCLOUD IS NOT RUNNING
 def main():
     """
     Main method for our initializing our Wrapper API and calling functions

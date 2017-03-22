@@ -1,8 +1,10 @@
 #
-#   Cisco Network Services Orchestrator(NSO) Wrapper API
+#   Cisco AMP for Endpoints Sample App
 #       v.01
 #
-#   Joel Fernandez(joelfern@cisco.com)
+#   Glenn Quah(glqjuah@cisco.com)
+#   Vorachat Nantasupawatana (vnantasu@cisco.com)
+#   Iman Arifin
 #       Feb 2017
 #
 #       This class provides methods to facilitates
@@ -69,29 +71,3 @@ class Wrapper_API(object) :
         apiResponse = apiRequest.send_api_request(computersURL)
         return apiResponse
 
-    def getDevices(self) :
-        """
-        Retrieves a list of devices from the NSO API
-        """
-        devicesURL = 'running/devices'
-        apiRequest = Wrapper_API()
-        apiResponse = apiRequest.send_api_request(devicesURL)
-        return apiResponse
-
-    def getTopology(self) :
-        """
-        Retrieves a list of devices and their relationships in a topology from the NSO API
-        """
-        TopologyURL = 'running/topology'
-        apiRequest = Wrapper_API()
-        apiResponse = apiRequest.send_api_request(TopologyURL)
-        return apiResponse
-
-    def getSnmpConfig(self):
-        """
-        Retrieves SNMP config from the NSO API
-        """
-        snmpConfigURL = 'running/snmp'
-        apiRequest = Wrapper_API()
-        apiResponse = apiRequest.send_api_request(snmpConfigURL)
-        return apiResponse
