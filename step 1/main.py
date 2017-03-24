@@ -1,10 +1,10 @@
 #
 #   Cisco AMP for Endpoints Sample App
-#       v.01
+#       v.02
 #
 #   Glenn Quah(glqjuah@cisco.com)
 #   Vorachat Nantasupawatana (vnantasu@cisco.com)
-#   Iman Arifin
+#   Iman Arifin (imarifin@cisco.com)
 #       Feb 2017
 #
 #       This class provides methods to facilitates
@@ -32,24 +32,50 @@ import sys
 import json
 from Wrapper_API import  Wrapper_API
 
+# NOT ABLE TO WORK IF DCLOUD IS NOT RUNNING
 def main():
     """
     Main method for our initializing our Wrapper API and calling functions
     """
     getWrapperAPI = Wrapper_API()
-    #getDevices = getWrapperAPI.getDevices()
-    #print(getDevices)
-    #getTopology = getWrapperAPI.getTopology()
-    #print(getTopology)
-    #getSnmpConfig = getWrapperAPI.getSnmpConfig()
 
-    #print(getSnmpConfig)
+    """
+    Retrieves a list of computers
+    """
     getComputersStr = getWrapperAPI.getComputers()
     getComputersJson = json.loads(getComputersStr)
-    with open('data.json', 'w', encoding='utf-8') as outfile:
-        json.dump(getComputersJson, outfile, skipkeys=True, ensure_ascii=True, separators=(',',':'))
-
+    with open('getComputers.json', 'w', encoding='utf-8') as outfile:
+        json.dump(getComputersJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',',':'))
+    print("printing list of computers")
     print(getComputersJson)
+
+    """
+    Retrieves a list of computers with given connector_guid
+    """
+    getComputersConnectorGuidStr = getWrapperAPI.getComputersConnectorGuid('7a6d95ee-bc44-4039-b317-728ed5690481')
+    getComputersConnectorGuidJson = json.loads(getComputersConnectorGuidStr)
+    with open('getComputersGuid.json', 'w', encoding='utf-8') as outfile:
+        json.dump(getComputersConnectorGuidJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',',':'))
+    print("printing list of computers with given guid")
+    print(getComputersConnectorGuidJson)
+
+    """
+    Retrieves a list of computers that has observed files with given file name
+    """
+    getComputerActivityFileNameStr = getWrapperAPI.getComputerActivityFileName('SearchProtocolHost.exe')
+    getComputerActivityFileNameJson = json.loads(getComputerActivityFileNameStr)
+    with open('getComputerActivityFileName.json', 'w', encoding='utf-8') as outfile:
+        json.dump(getComputerActivityFileNameJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',',':'))
+    print(getComputerActivityFileNameJson)
+
+    """
+    Retrieves a list of event sorted in descending order by timestamp
+    """
+    getEventStr = getWrapperAPI.getEvent()
+    getEventJson = json.loads(getEventStr)
+    with open('getEvent.json', 'w', encoding='utf-8') as outfile:
+        json.dump(getEventJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',',':'))
+    print(getEventJson)
 
 
 if __name__ == '__main__':
