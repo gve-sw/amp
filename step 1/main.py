@@ -1,18 +1,18 @@
 #
 #   Cisco AMP for Endpoints Sample App
-#       v.02
+#       v.03
 #
-#   Glenn Quah(glqjuah@cisco.com)
+#   Glenn Quah (glqjuah@cisco.com)
 #   Vorachat Nantasupawatana (vnantasu@cisco.com)
 #   Iman Arifin (imarifin@cisco.com)
 #       Feb 2017
 #
 #       This class provides methods to facilitates
-#       access to the Network Services Orchestrator API.
+#       access to the Advanced Malware Protection API.
 #
 #   REQUIREMENTS:
 #       Python sys library
-#       NSO Wrapper_API module to access the NSO API
+#       AMP Wrapper_API module to access the AMP API
 #
 #   WARNING:
 #       This script is meant for educational purposes only.
@@ -30,53 +30,65 @@
 
 import sys
 import json
-from Wrapper_API import  Wrapper_API
+from Wrapper_API import Wrapper
 
-# NOT ABLE TO WORK IF DCLOUD IS NOT RUNNING
 def main():
     """
     Main method for our initializing our Wrapper API and calling functions
     """
-    getWrapperAPI = Wrapper_API()
+    with open('settings.txt', 'r') as f:
+        hostname = f.readline().replace('\n', '')
+        username = f.readline().replace('\n', '')
+        password = f.readline().replace('\n', '')
+
+    print(hostname, username, password)
+    getWrapperAPI = Wrapper(hostname, username, password)
 
     """
     Retrieves a list of computers
     """
-    getComputersStr = getWrapperAPI.getComputers()
+    getComputersStr = getWrapperAPI.getComputers() 
     getComputersJson = json.loads(getComputersStr)
-    with open('getComputers.json', 'w', encoding='utf-8') as outfile:
-        json.dump(getComputersJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',',':'))
+    with open('computerList.json', 'w', encoding='utf-8') as outfile:
+        json.dump(getComputersJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',', ':'))
     print("printing list of computers")
     print(getComputersJson)
-
-    """
-    Retrieves a list of computers with given connector_guid
-    """
-    getComputersConnectorGuidStr = getWrapperAPI.getComputersConnectorGuid('7a6d95ee-bc44-4039-b317-728ed5690481')
-    getComputersConnectorGuidJson = json.loads(getComputersConnectorGuidStr)
-    with open('getComputersGuid.json', 'w', encoding='utf-8') as outfile:
-        json.dump(getComputersConnectorGuidJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',',':'))
-    print("printing list of computers with given guid")
-    print(getComputersConnectorGuidJson)
-
-    """
-    Retrieves a list of computers that has observed files with given file name
-    """
-    getComputerActivityFileNameStr = getWrapperAPI.getComputerActivityFileName('SearchProtocolHost.exe')
-    getComputerActivityFileNameJson = json.loads(getComputerActivityFileNameStr)
-    with open('getComputerActivityFileName.json', 'w', encoding='utf-8') as outfile:
-        json.dump(getComputerActivityFileNameJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',',':'))
-    print(getComputerActivityFileNameJson)
 
     """
     Retrieves a list of event sorted in descending order by timestamp
     """
     getEventStr = getWrapperAPI.getEvent()
     getEventJson = json.loads(getEventStr)
-    with open('getEvent.json', 'w', encoding='utf-8') as outfile:
-        json.dump(getEventJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',',':'))
+    with open('eventList.json', 'w', encoding='utf-8') as outfile:
+        json.dump(getEventJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',', ':'))
     print(getEventJson)
+    
+    """
+    Retrieves a list of event after specified time
+    """
+    getEventTimeStampStr = getWrapperAPI.getEventTimeStamp('2017-03-01')
+    getEventTimeStampJson = json.loads(getEventTimeStampStr)
+    with open('eventListTimeStamp.json', 'w', encoding='utf-8') as outfile:
+        json.dump(getEventTimeStampJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',', ':'))
+    
+    """
+    Retrieves a list of computers with given connector_guid
+    """
+    getComputersConnectorGuidStr = getWrapperAPI.getComputersConnectorGuid('5be84e5c-2c2f-40f6-bcc6-3a53cd335b3f')
+    getComputersConnectorGuidJson = json.loads(getComputersConnectorGuidStr)
+    with open('computerListGuid.json', 'w', encoding='utf-8') as outfile:
+        json.dump(getComputersConnectorGuidJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',', ':'))
+    print("printing list of computers with given guid")
+    print(getComputersConnectorGuidJson)
 
+    """
+    Retrieves a list of computers that has observed files with given file name
+    """
+    getComputerActivityFileNameStr = getWrapperAPI.getComputerActivityFileName('wsymqyv90.exe')
+    getComputerActivityFileNameJson = json.loads(getComputerActivityFileNameStr)
+    with open('computerListFileName.json', 'w', encoding='utf-8') as outfile:
+        json.dump(getComputerActivityFileNameJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',', ':'))
+    print(getComputerActivityFileNameJson)
 
 if __name__ == '__main__':
     sys.exit(main())

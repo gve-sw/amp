@@ -1,16 +1,18 @@
 #
-#   Cisco AMP for Endpoints Sample App v.02
+#   Cisco AMP for Endpoints Sample App
+#       v.03
 #
-#   Glenn Quah(glqjuah@cisco.com)
+#   Glenn Quah (glqjuah@cisco.com)
 #   Vorachat Nantasupawatana (vnantasu@cisco.com)
 #   Iman Arifin (imarifin@cisco.com)
 #       Feb 2017
 #
 #       This class provides methods to facilitates
-#       access to the Advanced Malware Protection for Endpoints API.
+#       access to the Advanced Malware Protection API.
 #
 #   REQUIREMENTS:
-#       Python requests library (issue the 'pip install requests' command in shell or cmd)
+#       Python sys library
+#       AMP Wrapper_API module to access the AMP API
 #
 #   WARNING:
 #       This script is meant for educational purposes only.
@@ -28,45 +30,36 @@
 
 import requests
 
-#host = '198.18.134.28:8080'
-host = 'api.apjc.amp.cisco.com'
-username = '8a2a49f003566ed3fb0b'
-password = '5d97572a-675f-40b6-a98c-2ba67b8e2c92'
-
-#username = 'badc2e9d062af26be4ad'
-#password = 'ff7924e3-6e14-404e-b289-d5628b7de7ca'
-#username = 'admin'
-#password = 'admin'
-
-class Wrapper_API(object) :
+def send_api_request(phrase,host,username,password):
     """
-    This class is used to interact with the NSO API
+    Sends a request to the API for retrieving data.
     """
-    def __init__(self):
-        self.host = host
+    url = 'http://' + host + '/v1' + '/' + phrase
+    headers = {'Content-Type': 'application/json',
+               'Accept': 'application/json',
+               'Accept-Encoding': 'application/gzip'
+               }
+    response = requests.get(url, auth=(username, password),
+                            headers=headers, verify=True)
+    return response.text
+
+class Wrapper(object) :
+    """
+    This class is used to interact with the AMP API
+    """
+    def __init__(self, hostname, username, password):
+        self.host = hostname
         self.username = username
         self.password = password
 
-    def send_api_request(self, phrase):
-        """
-        Sends a request to the API for retrieving data.
-        """
-        url = 'http://' + host + '/v1' + '/' + phrase
-        headers = {'Content-Type': 'application/json',
-                   'Accept': 'application/json',
-                   'Accept-Encoding': 'application/gzip'
-                   }
-        response = requests.get(url, auth=(username, password),
-                                headers=headers, verify=False)
-        return response.text
+
 
     def getComputers(self):
         """
         Retrieves a list of computers
         """
         computersURL = '/computers'
-        apiRequest = Wrapper_API()
-        apiResponse = apiRequest.send_api_request(computersURL)
+        apiResponse = send_api_request(computersURL, self.host, self.username, self.password)
         return apiResponse
 
     def getComputersConnectorGuid(self, connectorGuid):
@@ -75,8 +68,7 @@ class Wrapper_API(object) :
         """
         #7a6d95ee-bc44-4039-b317-728ed5690481
         computersURL = '/computers/' + connectorGuid
-        apiRequest = Wrapper_API()
-        apiResponse = apiRequest.send_api_request(computersURL)
+        apiResponse = send_api_request(computersURL, self.host, self.username, self.password)
         return apiResponse
 
     def getComputersTrajectoryConnectorGuid(self, connectorGuid):
@@ -85,8 +77,7 @@ class Wrapper_API(object) :
         """
         #7a6d95ee-bc44-4039-b317-728ed5690481
         computersURL = '/computers/' + connectorGuid + '/trajectory'
-        apiRequest = Wrapper_API()
-        apiResponse = apiRequest.send_api_request(computersURL)
+        apiResponse = send_api_request(computersURL, self.host, self.username, self.password)
         return apiResponse
 
     def getComputerActivityFileName(self, fileName):
@@ -94,8 +85,7 @@ class Wrapper_API(object) :
         Retrieves a list of computers that has observed files with given file name
         """
         computersURL = '/computers/activity?q=' + fileName
-        apiRequest = Wrapper_API()
-        apiResponse = apiRequest.send_api_request(computersURL)
+        apiResponse = send_api_request(computersURL, self.host, self.username, self.password)
         return apiResponse
 
     def getComputerActivitySHA(self, SHA):
@@ -104,8 +94,7 @@ class Wrapper_API(object) :
         """
         #814a37d89a79aa3975308e723bc1a3a67360323b7e3584de00896fe7c59bbb8e
         computersURL = '/computers/activity?q=' + SHA
-        apiRequest = Wrapper_API()
-        apiResponse = apiRequest.send_api_request(computersURL)
+        apiResponse = send_api_request(computersURL, self.host, self.username, self.password)
         return apiResponse
 
     def getEvent(self):
@@ -113,8 +102,7 @@ class Wrapper_API(object) :
         Retrieves a list of event sorted in descending order by timestamp
         """
         computersURL = '/events'
-        apiRequest = Wrapper_API()
-        apiResponse = apiRequest.send_api_request(computersURL)
+        apiResponse = send_api_request(computersURL, self.host, self.username, self.password)
         return apiResponse
 
     def getEventConnectorGuid(self, connectorGuid):
@@ -123,8 +111,7 @@ class Wrapper_API(object) :
         """
         # 7a6d95ee-bc44-4039-b317-728ed5690481
         computersURL = '/events?connector_guid[]=' + connectorGuid
-        apiRequest = Wrapper_API()
-        apiResponse = apiRequest.send_api_request(computersURL)
+        apiResponse = send_api_request(computersURL, self.host, self.username, self.password)
         return apiResponse
 
     def getEventGroupGuid(self, groupGuid):
@@ -133,8 +120,7 @@ class Wrapper_API(object) :
         """
         #b077d6bc-bbdf-42f7-8838-a06053fbd98a
         computersURL = '/events?group_guid[]=' + groupGuid
-        apiRequest = Wrapper_API()
-        apiResponse = apiRequest.send_api_request(computersURL)
+        apiResponse = send_api_request(computersURL, self.host, self.username, self.password)
         return apiResponse
 
     def getEventDetectionSHA(self, SHA):
@@ -143,8 +129,7 @@ class Wrapper_API(object) :
         """
         #3372c1edab46837f1e973164fa2d726c5c5e17bcb888828ccd7c4dfcc234a370
         computersURL = '/events?detection_sha256=' + SHA
-        apiRequest = Wrapper_API()
-        apiResponse = apiRequest.send_api_request(computersURL)
+        apiResponse = send_api_request(computersURL, self.host, self.username, self.password)
         return apiResponse
 
     def getEventApplicationSHA(self, SHA):
@@ -153,8 +138,7 @@ class Wrapper_API(object) :
         """
         #3372c1edab46837f1e973164fa2d726c5c5e17bcb888828ccd7c4dfcc234a370&
         computersURL = '/events?application_sha256=' + SHA
-        apiRequest = Wrapper_API()
-        apiResponse = apiRequest.send_api_request(computersURL)
+        apiResponse = send_api_request(computersURL, self.host, self.username, self.password)
         return apiResponse
 
     def getEventDectectionApplicationSHA(self, detectionSHA, applicationSHA):
@@ -164,8 +148,7 @@ class Wrapper_API(object) :
         #detection_sha256=3372c1edab46837f1e973164fa2d726c5c5e17bcb888828ccd7c4dfcc234a370
         #application_sha256=3372c1edab46837f1e973164fa2d726c5c5e17bcb888828ccd7c4dfcc234a370
         computersURL = '/events?detection_sha256=' + detectionSHA + '&application_sha256=' + applicationSHA
-        apiRequest = Wrapper_API()
-        apiResponse = apiRequest.send_api_request(computersURL)
+        apiResponse = send_api_request(computersURL, self.host, self.username, self.password)
         return apiResponse
 
     def getEventTimeStamp(self, timeStamp):
@@ -174,8 +157,7 @@ class Wrapper_API(object) :
         """
         #2015-10-01
         computersURL = '/events?start_date=' + timeStamp
-        apiRequest = Wrapper_API()
-        apiResponse = apiRequest.send_api_request(computersURL)
+        apiResponse = send_api_request(computersURL, self.host, self.username, self.password)
         return apiResponse
 
     def getEventTypes(self):
@@ -183,8 +165,7 @@ class Wrapper_API(object) :
         Retrieves a list of event
         """
         computersURL = '/event_types'
-        apiRequest = Wrapper_API()
-        apiResponse = apiRequest.send_api_request(computersURL)
+        apiResponse = send_api_request(computersURL, self.host, self.username, self.password)
         return apiResponse
 
     def getApplicationsBlockingList(self):
@@ -192,8 +173,7 @@ class Wrapper_API(object) :
         Retrieves a list of application_blocking file_lists
         """
         computersURL = '/file_lists/application_blocking'
-        apiRequest = Wrapper_API()
-        apiResponse = apiRequest.send_api_request(computersURL)
+        apiResponse = send_api_request(computersURL, self.host, self.username, self.password)
         return apiResponse
 
     def getApplicationsBlockingFileListName(self, fileListName):
@@ -202,8 +182,7 @@ class Wrapper_API(object) :
         """
         #Block_Vorachat
         computersURL = '/file_lists/application_blocking?name[]=' + fileListName
-        apiRequest = Wrapper_API()
-        apiResponse = apiRequest.send_api_request(computersURL)
+        apiResponse = send_api_request(computersURL, self.host, self.username, self.password)
         return apiResponse
 
     def getApplicationsBlockingFileListGuid(self, fileListGuid):
@@ -212,8 +191,7 @@ class Wrapper_API(object) :
         """
         #d77abe3d-adfa-4d65-bdd9-ce32b157e7de
         computersURL = '/file_lists/' + fileListGuid
-        apiRequest = Wrapper_API()
-        apiResponse = apiRequest.send_api_request(computersURL)
+        apiResponse = send_api_request(computersURL, self.host, self.username, self.password)
         return apiResponse
 
     def getCustomDetectionFileListGuid(self, fileListGuid):
@@ -221,8 +199,7 @@ class Wrapper_API(object) :
         Retrieves simple_custom_detection file list with given file_list_guid
         """
         computersURL = '/file_lists/' + fileListGuid
-        apiRequest = Wrapper_API()
-        apiResponse = apiRequest.send_api_request(computersURL)
+        apiResponse = send_api_request(computersURL, self.host, self.username, self.password)
         return apiResponse
 
     def getFileListItemFileListGuid(self, fileListGuid):
@@ -231,8 +208,7 @@ class Wrapper_API(object) :
         """
         #d77abe3d-adfa-4d65-bdd9-ce32b157e7de
         computersURL = '/file_lists/' + fileListGuid +'/files'
-        apiRequest = Wrapper_API()
-        apiResponse = apiRequest.send_api_request(computersURL)
+        apiResponse = send_api_request(computersURL, self.host, self.username, self.password)
         return apiResponse
 
     def getFileListItemSHAFileListGuid(self, SHA, fileListGuid):
@@ -240,8 +216,7 @@ class Wrapper_API(object) :
         Retrieves a list of file items with a given SHA-256 and associated with file list for given file_list_guid
         """
         computersURL = '/file_lists/' + fileListGuid + 'files/' + SHA
-        apiRequest = Wrapper_API()
-        apiResponse = apiRequest.send_api_request(computersURL)
+        apiResponse = send_api_request(computersURL, self.host, self.username, self.password)
         return apiResponse
 
     def getGroups(self):
@@ -249,8 +224,7 @@ class Wrapper_API(object) :
         Retrieves a list of group
         """
         computersURL = '/groups'
-        apiRequest = Wrapper_API()
-        apiResponse = apiRequest.send_api_request(computersURL)
+        apiResponse = send_api_request(computersURL, self.host, self.username, self.password)
         return apiResponse
 
     def getGroupsGroupGuid(self, groupGuid):
@@ -259,8 +233,7 @@ class Wrapper_API(object) :
         """
         #b077d6bc-bbdf-42f7-8838-a06053fbd98a
         computersURL = '/groups/' + groupGuid
-        apiRequest = Wrapper_API()
-        apiResponse = apiRequest.send_api_request(computersURL)
+        apiResponse = send_api_request(computersURL, self.host, self.username, self.password)
         return apiResponse
 
     def getPolicy(self):
@@ -268,8 +241,7 @@ class Wrapper_API(object) :
         Retrieves a list of policy
         """
         computersURL = '/policies'
-        apiRequest = Wrapper_API()
-        apiResponse = apiRequest.send_api_request(computersURL)
+        apiResponse = send_api_request(computersURL, self.host, self.username, self.password)
         return apiResponse
 
     def getPolicyPolicyGuid(self, policyGuid):
@@ -278,8 +250,7 @@ class Wrapper_API(object) :
         """
         #89912c9e-8dbd-4c2b-a1d8-dee8a0c2bb29
         computersURL = '/policies/' + policyGuid
-        apiRequest = Wrapper_API()
-        apiResponse = apiRequest.send_api_request(computersURL)
+        apiResponse = send_api_request(computersURL, self.host, self.username, self.password)
         return apiResponse
 
     def getVersion(self):
@@ -287,7 +258,6 @@ class Wrapper_API(object) :
         Retrieves a list of event
         """
         computersURL = '/version'
-        apiRequest = Wrapper_API()
-        apiResponse = apiRequest.send_api_request(computersURL)
+        apiResponse = send_api_request(computersURL, self.host, self.username, self.password)
         return apiResponse
 
