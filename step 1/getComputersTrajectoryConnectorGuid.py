@@ -1,6 +1,9 @@
 """
 AMP for Endpoints API
-Retrieves list of computers
+Author: Glenn Quah
+Date 30 March 2017
+
+Retrieves specific computer's trajectory with given connector_guid
 """
 
 import requests

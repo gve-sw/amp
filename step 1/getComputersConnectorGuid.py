@@ -1,8 +1,10 @@
 """
 AMP for Endpoints API
-Retrieves list of computers
-"""
+Author: Glenn Quah
+Date 30 March 2017
 
+Retrieves a list of computers with given connector_guid
+"""
 import requests
 
 with open('settings.txt', 'r') as f:

@@ -1,6 +1,9 @@
 """
 AMP for Endpoints API
-Retrieves list of computers
+Author: Glenn Quah
+Date 30 March 2017
+
+Retrieves a list of computers that has observed files with given SHA-256 value
 """
 
 import requests

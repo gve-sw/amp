@@ -1,5 +1,8 @@
 """
 AMP for Endpoints API
+Author: Glenn Quah
+Date 30 March 2017
+
 Retrieves list of computers
 """
 
