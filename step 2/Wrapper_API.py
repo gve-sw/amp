@@ -80,7 +80,7 @@ class Wrapper(object) :
         apiResponse = send_api_request(inputURL, self.host, self.username, self.password)
         return apiResponse
 
-    def getComputerActivityFileName(self, fileName):
+    def getComputersActivityFileName(self, fileName):
         """
         Retrieves a list of computers that has observed files with given file name
         """
@@ -88,7 +88,7 @@ class Wrapper(object) :
         apiResponse = send_api_request(inputURL, self.host, self.username, self.password)
         return apiResponse
 
-    def getComputerActivitySHA(self, SHA):
+    def getComputersActivitySHA(self, SHA):
         """
         Retrieves a list of computers that has observed files with given SHA-256 value
         """
@@ -255,7 +255,7 @@ class Wrapper(object) :
 
     def getVersion(self):
         """
-        Retrieves a list of event
+        Retrieves the version
         """
         inputURL = '/version'
         apiResponse = send_api_request(inputURL, self.host, self.username, self.password)

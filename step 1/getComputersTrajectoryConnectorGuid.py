@@ -1,6 +1,6 @@
 """
 AMP for Endpoints API
-Author: Glenn Quah
+Author: Glenn Quah, Iman Arifin
 Date 30 March 2017
 
 Retrieves specific computer's trajectory with given connector_guid
