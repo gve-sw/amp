@@ -88,14 +88,6 @@ def main():
     print("printing list of computers with given guid")
     print(getComputersConnectorGuidJson)
 
-    """
-    Retrieves a list of computers that has observed files with given file name
-    """
-    getComputerActivityFileNameJson = getWrapperAPI.getComputerActivityFileName('wsymqyv90.exe')
-    with open('computerListFileName.json', 'w', encoding='utf-8') as outfile:
-        json.dump(getComputerActivityFileNameJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',', ':'))
-    print("printing list of computers with given filename")
-    print(getComputerActivityFileNameJson)
 
 if __name__ == '__main__':
     sys.exit(main())
