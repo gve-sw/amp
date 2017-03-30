@@ -5,9 +5,11 @@ Retrieves list of computers
 
 import requests
 
-host = 'api.apjc.amp.cisco.com'
-user = '8a2a49f003566ed3fb0b'
-password = '5d97572a-675f-40b6-a98c-2ba67b8e2c92'
+with open('settings.txt', 'r') as f:
+    host = f.readline().replace('\n', '')
+    user = f.readline().replace('\n', '')
+    password = f.readline().replace('\n', '')
+print(host, user, password)
 
 connectorGuid = '7a6d95ee-bc44-4039-b317-728ed5690481'
 inputURL = '/computers/' + connectorGuid + '/trajectory'
