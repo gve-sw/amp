@@ -41,7 +41,7 @@ def main():
     Retrieve API keys from settings.txt
     """
     with open('settings.txt', 'r') as f:
-        hostname = f.readline().replace('\n', '')
+        hostname = f.readline().replace('\n', '')  #removes linefeed at the end of everyline
         username = f.readline().replace('\n', '')
         password = f.readline().replace('\n', '')
     print(hostname, username, password)
@@ -49,12 +49,12 @@ def main():
     """
     Initialise Wrapper
     """
-    getWrapperAPI = Wrapper(hostname, username, password)
+    ampWrapper = Wrapper(hostname, username, password)
 
     """
     Retrieves a list of computers
     """
-    getComputersJson = getWrapperAPI.getComputers()
+    getComputersJson = ampWrapper.getComputers()
     with open('computerList.json', 'w', encoding='utf-8') as outfile:
         json.dump(getComputersJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',', ':'))
     print("printing list of computers")
@@ -63,7 +63,7 @@ def main():
     """
     Retrieves a list of event sorted in descending order by timestamp
     """
-    getEventJson = getWrapperAPI.getEvent()
+    getEventJson = ampWrapper.getEvent()
     with open('eventList.json', 'w', encoding='utf-8') as outfile:
         json.dump(getEventJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',', ':'))
     print("printing list of events")
@@ -72,7 +72,7 @@ def main():
     """
     Retrieves a list of event after specified time
     """
-    getEventTimeStampJson = getWrapperAPI.getEventTimeStamp('2017-03-01')
+    getEventTimeStampJson = ampWrapper.getEventTimeStamp('2017-03-01')
     with open('eventListTimeStamp.json', 'w', encoding='utf-8') as outfile:
         json.dump(getEventTimeStampJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',', ':'))
     print("printing list of events after specified time")
@@ -82,7 +82,7 @@ def main():
     """
     Retrieves a list of computers with given connector_guid
     """
-    getComputersConnectorGuidJson = getWrapperAPI.getComputersConnectorGuid('5be84e5c-2c2f-40f6-bcc6-3a53cd335b3f')
+    getComputersConnectorGuidJson = ampWrapper.getComputersConnectorGuid('5be84e5c-2c2f-40f6-bcc6-3a53cd335b3f')
     with open('computerListGuid.json', 'w', encoding='utf-8') as outfile:
         json.dump(getComputersConnectorGuidJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',', ':'))
     print("printing list of computers with given guid")
