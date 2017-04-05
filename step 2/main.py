@@ -30,7 +30,7 @@
 
 import sys
 import json
-from Wrapper_API import Wrapper
+from AMP_API import Wrapper
 
 def main():
     """
