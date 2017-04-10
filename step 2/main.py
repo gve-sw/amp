@@ -47,7 +47,7 @@ def main():
     print(hostname, username, password)
 
     """
-    Initialise Wrapper
+    Initialise Wrapper object
     """
     ampWrapper = Wrapper(hostname, username, password)
 
@@ -57,8 +57,17 @@ def main():
     getComputersJson = ampWrapper.getComputers()
     with open('computerList.json', 'w', encoding='utf-8') as outfile:
         json.dump(getComputersJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',', ':'))
-    print("printing list of computers")
-    print(getComputersJson)
+    #print("printing list of computers")
+    #print(getComputersJson)
+
+    """
+    Retrieves a list of event types
+    """
+    getEventTypeJson = ampWrapper.getEventTypes()
+    with open('eventTypeList.json', 'w', encoding='utf-8') as outfile:
+        json.dump(getEventTypeJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',', ':'))
+    #print("printing list of event types")
+    #print(getEventTypeJson)
 
     """
     Retrieves a list of event sorted in descending order by timestamp
@@ -66,27 +75,62 @@ def main():
     getEventJson = ampWrapper.getEvent()
     with open('eventList.json', 'w', encoding='utf-8') as outfile:
         json.dump(getEventJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',', ':'))
-    print("printing list of events")
-    print(getEventJson)
-    
+    #print("printing list of events")
+    #print(getEventJson)
+
+    """
+    Retrieves a list of application blocking lists
+    """
+    getApplicationsBlockingListJson = ampWrapper.getApplicationsBlockingList()
+    with open('applicationBlockingList.json', 'w', encoding='utf-8') as outfile:
+        json.dump(getApplicationsBlockingListJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',', ':'))
+    #print("printing list of application blocking lists")
+    #print(getApplicationsBlockingListJson)
+
+    """
+    Retrieves a list of groups
+    """
+    getGroupsJson = ampWrapper.getGroups()
+    with open('groups.json', 'w', encoding='utf-8') as outfile:
+        json.dump(getGroupsJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',', ':'))
+    #print("printing list of groups")
+    #print(getGroupsJson)
+
+    """
+    Retrieves a list of policies
+    """
+    getPolicyJson = ampWrapper.getPolicy()
+    with open('policy.json', 'w', encoding='utf-8') as outfile:
+        json.dump(getPolicyJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',', ':'))
+    #print("printing list of policies")
+    #print(getPolicyJson)
+
     """
     Retrieves a list of event after specified time
     """
-    getEventTimeStampJson = ampWrapper.getEventTimeStamp('2017-03-01')
-    with open('eventListTimeStamp.json', 'w', encoding='utf-8') as outfile:
-        json.dump(getEventTimeStampJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',', ':'))
-    print("printing list of events after specified time")
-    print(getEventTimeStampJson)
+    #getEventTimeStampJson = ampWrapper.getEventTimeStamp('2017-03-01')
+    #with open('eventListTimeStamp.json', 'w', encoding='utf-8') as outfile:
+    #    json.dump(getEventTimeStampJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',', ':'))
+    #print("printing list of events after specified time")
+    #print(getEventTimeStampJson)
 
 
     """
     Retrieves a list of computers with given connector_guid
     """
-    getComputersConnectorGuidJson = ampWrapper.getComputersConnectorGuid('5be84e5c-2c2f-40f6-bcc6-3a53cd335b3f')
-    with open('computerListGuid.json', 'w', encoding='utf-8') as outfile:
-        json.dump(getComputersConnectorGuidJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',', ':'))
-    print("printing list of computers with given guid")
-    print(getComputersConnectorGuidJson)
+    #getComputersConnectorGuidJson = ampWrapper.getComputersConnectorGuid('5be84e5c-2c2f-40f6-bcc6-3a53cd335b3f')
+    #with open('computerListGuid.json', 'w', encoding='utf-8') as outfile:
+    #    json.dump(getComputersConnectorGuidJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',', ':'))
+    #print("printing list of computers with given guid")
+    #print(getComputersConnectorGuidJson)
+
+    """
+    Merges json objects and output as a single file
+    """
+    outJson = { 'computerList': getComputersJson, 'eventTypeList' : getEventJson, 'eventList' : getEventJson, 'applicationBlockingList' : getApplicationsBlockingListJson, 'groups' : getGroupsJson, 'policy' : getPolicyJson }
+    print(outJson)
+    with open('out.json', 'w', encoding='utf-8') as outfile:
+        json.dump(outJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',', ':'))
 
 
 if __name__ == '__main__':
