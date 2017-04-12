@@ -6,7 +6,7 @@ Author(s):
 * Vorachat Nantasupawatana (vnantasu@cisco.com)
 * Iman Arifin (imarifin@cisco.com)
 
-Mar 2017
+Date: Mar 2017
 
 ##   WARNING:
        This script is meant for educational purposes only.
@@ -17,7 +17,7 @@ Mar 2017
        responsible for any damage or data loss
        incurred with their use.
 
-   INFORMATION:
+## INFORMATION:
        If you have further questions about this API and script, please contact GVE. Here are the contact details:
            For internal Cisco employees, please contact GVE at http://go2.cisco.com/gve
            For Cisco partners, please open a case at www.cisco.com/go/ph
