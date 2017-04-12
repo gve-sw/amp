@@ -2,9 +2,9 @@
 #   Cisco AMP for Endpoints Sample App - Granular Scripts
 
 Author(s):
-Glenn Quah (glqjuah@cisco.com)
-Vorachat Nantasupawatana (vnantasu@cisco.com)
-Iman Arifin (imarifin@cisco.com)
+* Glenn Quah (glqjuah@cisco.com)
+* Vorachat Nantasupawatana (vnantasu@cisco.com)
+* Iman Arifin (imarifin@cisco.com)
 
 Mar 2017
 
