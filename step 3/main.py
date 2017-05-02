@@ -31,21 +31,24 @@
 import sys
 import json
 from AMP_API import Wrapper
+from flask import Flask, render_template, request
 
-def main():
+app = Flask(__name__)
+@app.route('/')
+def dashboard():
+    return render_template('/index.html')
+
+@app.route('/index', methods=['POST'])
+def combineJSON():
+    outputJson()
+    return
+
+
+
+def outputJson():
     """
     Main method for our initializing our Wrapper API and calling functions
     """
-
-    """
-    Retrieve API keys from settings.txt
-    """
-    with open('settings.txt', 'r') as f:
-        hostname = f.readline().replace('\n', '')  #removes linefeed at the end of everyline
-        username = f.readline().replace('\n', '')
-        password = f.readline().replace('\n', '')
-    print(hostname, username, password)
-
     """
     Initialise Wrapper object
     """
@@ -134,4 +137,15 @@ def main():
 
 
 if __name__ == '__main__':
-    sys.exit(main())
+
+    """
+    Retrieve API keys from settings.txt
+    """
+    with open('settings.txt', 'r') as f:
+        hostname = f.readline().replace('\n', '')  # removes linefeed at the end of everyline
+        username = f.readline().replace('\n', '')
+        password = f.readline().replace('\n', '')
+    print(hostname, username, password)
+
+    app.run()
+    #sys.exit(outputJson())
