@@ -1,0 +1,126 @@
+{
+  "data":[
+    {
+      "default":true,
+      "guid":"10faf161-ab32-4bd3-a3aa-96419c0a0217",
+      "links":{
+        "policy":"https://api.apjc.amp.cisco.com/v1/policies/10faf161-ab32-4bd3-a3aa-96419c0a0217"
+      },
+      "name":"Default Android",
+      "product":"android",
+      "serial_number":81
+    },
+    {
+      "default":true,
+      "guid":"e4a02f11-4b2f-4415-96b8-b1b02dff05c2",
+      "links":{
+        "policy":"https://api.apjc.amp.cisco.com/v1/policies/e4a02f11-4b2f-4415-96b8-b1b02dff05c2"
+      },
+      "name":"Audit Policy for Linux",
+      "product":"linux",
+      "serial_number":89
+    },
+    {
+      "default":false,
+      "guid":"ca623158-45ab-4f5f-9e16-7ea833558969",
+      "links":{
+        "policy":"https://api.apjc.amp.cisco.com/v1/policies/ca623158-45ab-4f5f-9e16-7ea833558969"
+      },
+      "name":"Protect Policy for Linux",
+      "product":"linux",
+      "serial_number":91
+    },
+    {
+      "default":true,
+      "guid":"05161bd4-2881-4175-a20b-e38b3713af7d",
+      "links":{
+        "policy":"https://api.apjc.amp.cisco.com/v1/policies/05161bd4-2881-4175-a20b-e38b3713af7d"
+      },
+      "name":"Audit Policy for Mac",
+      "product":"mac",
+      "serial_number":83
+    },
+    {
+      "default":false,
+      "guid":"66e433a2-c1c5-4382-b49e-a987567e0711",
+      "links":{
+        "policy":"https://api.apjc.amp.cisco.com/v1/policies/66e433a2-c1c5-4382-b49e-a987567e0711"
+      },
+      "name":"Protect Policy for Mac",
+      "product":"mac",
+      "serial_number":85
+    },
+    {
+      "default":false,
+      "guid":"e5f3a5b2-6e44-4086-966b-7989f4a3846b",
+      "links":{
+        "policy":"https://api.apjc.amp.cisco.com/v1/policies/e5f3a5b2-6e44-4086-966b-7989f4a3846b"
+      },
+      "name":"Triage Policy for Mac",
+      "product":"mac",
+      "serial_number":87
+    },
+    {
+      "default":true,
+      "guid":"47236770-1d69-4c76-a2fd-9affa336df87",
+      "links":{
+        "policy":"https://api.apjc.amp.cisco.com/v1/policies/47236770-1d69-4c76-a2fd-9affa336df87"
+      },
+      "name":"Audit Policy",
+      "product":"windows",
+      "serial_number":2
+    },
+    {
+      "default":false,
+      "guid":"6ac560e3-abc6-48da-b3e1-bed50b6341d4",
+      "links":{
+        "policy":"https://api.apjc.amp.cisco.com/v1/policies/6ac560e3-abc6-48da-b3e1-bed50b6341d4"
+      },
+      "name":"Domain Controller Policy",
+      "product":"windows",
+      "serial_number":80
+    },
+    {
+      "default":false,
+      "guid":"1dc1db5c-b850-48ef-9625-771356af7683",
+      "links":{
+        "policy":"https://api.apjc.amp.cisco.com/v1/policies/1dc1db5c-b850-48ef-9625-771356af7683"
+      },
+      "name":"Protect Policy",
+      "product":"windows",
+      "serial_number":4
+    },
+    {
+      "default":false,
+      "guid":"542ca3f5-21a7-4f22-8aa7-eb908fcc74e7",
+      "links":{
+        "policy":"https://api.apjc.amp.cisco.com/v1/policies/542ca3f5-21a7-4f22-8aa7-eb908fcc74e7"
+      },
+      "name":"Server Policy",
+      "product":"windows",
+      "serial_number":47
+    },
+    {
+      "default":false,
+      "guid":"6b00de05-6fa1-4fd4-ac23-0a22eb9038a7",
+      "links":{
+        "policy":"https://api.apjc.amp.cisco.com/v1/policies/6b00de05-6fa1-4fd4-ac23-0a22eb9038a7"
+      },
+      "name":"Triage Policy",
+      "product":"windows",
+      "serial_number":6
+    }
+  ],
+  "metadata":{
+    "links":{
+      "self":"https://api.apjc.amp.cisco.com/v1/policies"
+    },
+    "results":{
+      "current_item_count":11,
+      "index":0,
+      "items_per_page":500,
+      "total":11
+    }
+  },
+  "version":"v1.1.0"
+}

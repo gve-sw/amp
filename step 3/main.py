@@ -31,24 +31,46 @@
 import sys
 import json
 from AMP_API import Wrapper
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
-@app.route('/')
+@app.route("/")
 def dashboard():
-    return render_template('/index.html')
+    return render_template('index.html')
 
-@app.route('/index', methods=['POST'])
-def combineJSON():
-    outputJson()
-    return
+@app.route("/download.html")
+def download():
+    return render_template('download.html')
 
-
+@app.route("/index.html", methods=["GET", "POST"])
+def selectOption():
+    """
+    Initialise Wrapper object
+    """
+    ampWrapper = Wrapper(hostname, username, password)
+    print(request.form.getlist("computer"))
+    if request.form.get("computer"):
+        print("checked computer")
+    if request.form.get("event"):
+        print("checked event")
+    if request.form.get("eventType"):
+        print("eventType")
+    return redirect('/')
 
 def outputJson():
     """
     Main method for our initializing our Wrapper API and calling functions
     """
+
+    """
+    Retrieve API keys from settings.txt
+    """
+    with open('settings.txt', 'r') as f:
+        hostname = f.readline().replace('\n', '')  # removes linefeed at the end of everyline
+        username = f.readline().replace('\n', '')
+        password = f.readline().replace('\n', '')
+    print(hostname, username, password)
+
     """
     Initialise Wrapper object
     """
@@ -137,15 +159,6 @@ def outputJson():
 
 
 if __name__ == '__main__':
-
-    """
-    Retrieve API keys from settings.txt
-    """
-    with open('settings.txt', 'r') as f:
-        hostname = f.readline().replace('\n', '')  # removes linefeed at the end of everyline
-        username = f.readline().replace('\n', '')
-        password = f.readline().replace('\n', '')
-    print(hostname, username, password)
-
+    #outputJson()
     app.run()
     #sys.exit(outputJson())

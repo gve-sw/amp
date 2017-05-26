@@ -1,0 +1,513 @@
+{
+  "data":[
+    {
+      "description":"A new agent has registered with the system.",
+      "id":50331649,
+      "name":"\u521d\u59cb\u4ee3\u7406\u6ce8\u518c"
+    },
+    {
+      "description":"An agent has been told to fetch policy.",
+      "id":553648130,
+      "name":"\u7b56\u7565\u66f4\u65b0"
+    },
+    {
+      "description":"A policy update failed, and the policy was not successfully applied.",
+      "id":2164260866,
+      "name":"\u7b56\u7565\u66f4\u65b0\u5931\u8d25"
+    },
+    {
+      "description":"An agent has started to update it's virus definitions.",
+      "id":553648131,
+      "name":"\u5b9a\u4e49\u66f4\u65b0\u5df2\u5f00\u59cb"
+    },
+    {
+      "description":"An agent has failed while trying to update it's virus definitions.",
+      "id":2164260868,
+      "name":"\u5b9a\u4e49\u66f4\u65b0\u5931\u8d25"
+    },
+    {
+      "description":"An agent has successfully updated it virus definitions.",
+      "id":553648133,
+      "name":"\u5b9a\u4e49\u66f4\u65b0\u6210\u529f"
+    },
+    {
+      "description":"An agent has started scanning.",
+      "id":554696714,
+      "name":"\u626b\u63cf\u5df2\u542f\u52a8"
+    },
+    {
+      "description":"A scan has completed without detecting anything malicious.",
+      "id":554696715,
+      "name":"\u626b\u63cf\u5b8c\u6210\uff0c\u672a\u68c0\u51fa"
+    },
+    {
+      "description":"A scan has completed and detected malicious items.",
+      "id":1091567628,
+      "name":"\u626b\u63cf\u5b8c\u6210\uff0c\u68c0\u51fa"
+    },
+    {
+      "description":"A scan has been attempted, and failed to run.",
+      "id":2165309453,
+      "name":"\u626b\u63cf\u5931\u8d25"
+    },
+    {
+      "description":"A threat was found on this system.",
+      "id":1090519054,
+      "name":"\u68c0\u6d4b\u5230\u5a01\u80c1"
+    },
+    {
+      "description":"A threat was successfully quarantined.",
+      "id":553648143,
+      "name":"\u5a01\u80c1\u5df2\u9694\u79bb"
+    },
+    {
+      "description":"A detected threat was not successfully quarantined.",
+      "id":2164260880,
+      "name":"\u9694\u79bb\u5931\u8d25"
+    },
+    {
+      "description":"A threat was detected in an excluded path.",
+      "id":553648145,
+      "name":"\u6392\u9664\u90e8\u5206\u68c0\u51fa\u5a01\u80c1"
+    },
+    {
+      "description":"A request has been made to move a file from Quarantine back to its original location.",
+      "id":570425394,
+      "name":"\u5df2\u8bf7\u6c42\u6062\u590d\u9694\u79bb"
+    },
+    {
+      "description":"An item has been pulled restored from Quarantine to its original location.",
+      "id":553648149,
+      "name":"\u6062\u590d\u9694\u79bb\u9879\u76ee"
+    },
+    {
+      "description":"An item requested to be restored to its original location could not be restored.",
+      "id":2164260884,
+      "name":"\u6062\u590d\u9694\u79bb\u5931\u8d25"
+    },
+    {
+      "description":"A request to restore an item from quarantine was not successfully sent.",
+      "id":2181038130,
+      "name":"\u672a\u80fd\u53d1\u9001\u9694\u79bb\u8bf7\u6c42"
+    },
+    {
+      "description":"A quarantined item has been successfully deleted.",
+      "id":553648152,
+      "name":"\u9694\u79bb\u9879\u76ee\u5df2\u5220\u9664"
+    },
+    {
+      "description":"A quarantined item was not successfully removed from quarantine.",
+      "id":2164260889,
+      "name":"\u672a\u80fd\u4ece\u9694\u79bb\u533a\u5220\u9664"
+    },
+    {
+      "description":"Attempting to remove an item from quarantine.",
+      "id":553648151,
+      "name":"\u6b63\u5728\u5c1d\u8bd5\u9694\u79bb\u533a\u5220\u9664"
+    },
+    {
+      "description":"A retrospective restore was completed successfully.",
+      "id":553648154,
+      "name":"\u4ece\u9694\u79bb\u4e2d\u6062\u590d\u4e91\u53ec\u56de"
+    },
+    {
+      "description":"A retrospective quarantine was completed successfully.",
+      "id":553648155,
+      "name":"\u4e91\u53ec\u56de\u9694\u79bb"
+    },
+    {
+      "description":"A retrospective restore was attemped and failed. Most likely the original location no longer exists.",
+      "id":2164260892,
+      "name":"\u4ece\u9694\u79bb\u4e2d\u6062\u590d\u4e91\u53ec\u56de\u5931\u8d25"
+    },
+    {
+      "description":"A retrospective quarantine was attemped and failed. Most likely the original location no longer exists.",
+      "id":2164260893,
+      "name":"\u4e91\u53ec\u56de\u9694\u79bb\u5c1d\u8bd5\u5931\u8d25"
+    },
+    {
+      "description":"An installation has begun.",
+      "id":553648158,
+      "name":"\u5b89\u88c5\u5df2\u542f\u52a8"
+    },
+    {
+      "description":"An installation has failed.",
+      "id":2164260895,
+      "name":"\u5b89\u88c5\u5931\u8d25"
+    },
+    {
+      "description":"",
+      "id":553648160,
+      "name":"\u4e0a\u4f20\u5df2\u542f\u52a8"
+    },
+    {
+      "description":"",
+      "id":553648161,
+      "name":"\u4e0a\u4f20\u6210\u529f"
+    },
+    {
+      "description":"",
+      "id":2164260898,
+      "name":"\u4e0a\u4f20\u5931\u8d25"
+    },
+    {
+      "description":"",
+      "id":553648163,
+      "name":"\u6b63\u5728\u52a0\u8f7d\u626b\u63cf\u8ba1\u5212"
+    },
+    {
+      "description":"",
+      "id":553648164,
+      "name":"\u626b\u63cf\u8ba1\u5212\u5df2\u4fdd\u5b58"
+    },
+    {
+      "description":"",
+      "id":2164260901,
+      "name":"\u626b\u63cf\u8ba1\u5212\u672a\u4fdd\u5b58"
+    },
+    {
+      "description":"",
+      "id":553648166,
+      "name":"\u5378\u8f7d"
+    },
+    {
+      "description":"",
+      "id":2164260903,
+      "name":"\u5378\u8f7d\u5931\u8d25"
+    },
+    {
+      "description":"A report has been successfully created",
+      "id":2001,
+      "name":"\u5df2\u521b\u5efa\u62a5\u544a"
+    },
+    {
+      "description":"The restoring of a file from Quarantine was attempted.",
+      "id":553648150,
+      "name":"\u5f00\u59cb\u6062\u590d\u9694\u79bb"
+    },
+    {
+      "description":"A file once thought to be malicious has been marked as clean and restored.",
+      "id":553648146,
+      "name":"\u8bef\u62a5\u7684\u4e91\u53ec\u56de\u6062\u590d"
+    },
+    {
+      "description":"A file once thought to be clean has been marked malicious and quarantined.",
+      "id":553648147,
+      "name":"\u6f0f\u62a5\u7684\u4e91\u53ec\u56de\u9694\u79bb"
+    },
+    {
+      "description":"Execution of an application was blocked.",
+      "id":553648168,
+      "name":"\u5df2\u963b\u6b62\u7684\u6267\u884c"
+    },
+    {
+      "description":"Sent when a user account gets created.",
+      "id":1003,
+      "name":"\u7535\u5b50\u90ae\u4ef6\u786e\u8ba4"
+    },
+    {
+      "description":"Sent when a user forgets password.",
+      "id":1004,
+      "name":"\u5fd8\u8bb0\u7684\u5bc6\u7801\u5df2\u91cd\u7f6e"
+    },
+    {
+      "description":"Sent when a user has reset his password.",
+      "id":1005,
+      "name":"\u5bc6\u7801\u5df2\u91cd\u7f6e"
+    },
+    {
+      "description":"Some of the computer's metadata (e.g. IP addess, OS) changed.",
+      "id":570425395,
+      "name":"\u8ba1\u7b97\u673a\u5143\u6570\u636e\u5df2\u66f4\u6539"
+    },
+    {
+      "description":"An Application was registered.",
+      "id":570425396,
+      "name":"\u5e94\u7528\u5df2\u6ce8\u518c"
+    },
+    {
+      "description":"An Application was deregistered.",
+      "id":570425397,
+      "name":"\u5e94\u7528\u5df2\u53d6\u6d88\u6ce8\u518c"
+    },
+    {
+      "description":"An Application was authorized to access a portion of the API.",
+      "id":570425398,
+      "name":"\u5e94\u7528\u5df2\u83b7\u6388\u6743"
+    },
+    {
+      "description":"An Application was deauthorized from access to a portion of the API.",
+      "id":570425399,
+      "name":"\u5e94\u7528\u5df2\u53d6\u6d88\u6388\u6743"
+    },
+    {
+      "description":"A threat was found on this system.",
+      "id":1090524040,
+      "name":"\u68c0\u6d4b\u5230 APK \u5a01\u80c1"
+    },
+    {
+      "description":"An apk matching an Android Simple Custom Detection was found on this system.",
+      "id":1090524041,
+      "name":"\u68c0\u6d4b\u5230 APK \u81ea\u5b9a\u4e49\u5a01\u80c1"
+    },
+    {
+      "description":"A connection has been detected by DFC.",
+      "id":1090519084,
+      "name":"\u68c0\u6d4b\u5230 DFC \u5a01\u80c1"
+    },
+    {
+      "description":"A threat has been detected by Cognitive Threat Analytics.",
+      "id":1107296285,
+      "name":"\u611f\u77e5\u4e8b\u4ef6"
+    },
+    {
+      "description":"A threat was found hidden on this system.",
+      "id":1090519081,
+      "name":"Rootkit\u68c0\u6d4b"
+    },
+    {
+      "description":"A product update is available.",
+      "id":553648134,
+      "name":"\u4ea7\u54c1\u66f4\u65b0\u53ef\u7528"
+    },
+    {
+      "description":"A product update has begun.",
+      "id":553648135,
+      "name":"\u4ea7\u54c1\u66f4\u65b0\u5df2\u542f\u52a8"
+    },
+    {
+      "description":"A product update has successfully completed",
+      "id":553648136,
+      "name":"\u4ea7\u54c1\u66f4\u65b0\u5df2\u5b8c\u6210"
+    },
+    {
+      "description":"A product update has failed.",
+      "id":553648137,
+      "name":"\u4ea7\u54c1\u66f4\u65b0\u5931\u8d25"
+    },
+    {
+      "description":"The request for a remote file was successful",
+      "id":553648173,
+      "name":"\u6587\u4ef6\u83b7\u53d6\u5df2\u5b8c\u6210"
+    },
+    {
+      "description":"The request for a remote file failed",
+      "id":2164260910,
+      "name":"\u6587\u4ef6\u83b7\u53d6\u5931\u8d25"
+    },
+    {
+      "description":"A reboot request has been initiated",
+      "id":553648170,
+      "name":"\u91cd\u65b0\u542f\u52a8\u6302\u8d77"
+    },
+    {
+      "description":"A requested reboot has completed",
+      "id":553648171,
+      "name":"\u91cd\u65b0\u542f\u52a8\u5df2\u5b8c\u6210"
+    },
+    {
+      "description":"Endpoint IOC Scan Started",
+      "id":554696756,
+      "name":"\u7ec8\u7aef IOC \u626b\u63cf\u5df2\u542f\u52a8"
+    },
+    {
+      "description":"Endpoint IOC Scan Completed, No Detections",
+      "id":554696757,
+      "name":"\u7ec8\u7aef IOC \u626b\u63cf\u5df2\u5b8c\u6210\uff0c\u672a\u53d1\u73b0\u5f02\u5e38"
+    },
+    {
+      "description":"Endpoint IOC Scan Completed With Detections",
+      "id":1091567670,
+      "name":"\u7ec8\u7aef IOC \u626b\u63cf\u5df2\u5b8c\u6210\uff0c\u53d1\u73b0\u5f02\u5e38"
+    },
+    {
+      "description":"Endpoint IOC Scan Failed",
+      "id":2165309495,
+      "name":"\u7ec8\u7aef IOC \u626b\u63cf\u5931\u8d25"
+    },
+    {
+      "description":"Endpoint IOC Scan Detection Summary",
+      "id":1090519089,
+      "name":"\u7ec8\u7aef IOC \u626b\u63cf\u68c0\u6d4b\u6458\u8981"
+    },
+    {
+      "description":"Endpoint IOC Definition Update Failure",
+      "id":2164260914,
+      "name":"\u7ec8\u7aef IOC \u5b9a\u4e49\u66f4\u65b0\u5931\u8d25"
+    },
+    {
+      "description":"Endpoint IOC Definition Update Success",
+      "id":553648179,
+      "name":"\u7ec8\u7aef IOC \u5b9a\u4e49\u66f4\u65b0\u6210\u529f"
+    },
+    {
+      "description":"Endpoint IOC Configuration Update Failure",
+      "id":2164260911,
+      "name":"\u7ec8\u7aef IOC \u914d\u7f6e\u66f4\u65b0\u5931\u8d25"
+    },
+    {
+      "description":"Endpoint IOC Configuration Update Success",
+      "id":553648176,
+      "name":"\u7ec8\u7aef IOC \u914d\u7f6e\u66f4\u65b0\u6210\u529f"
+    },
+    {
+      "description":"Threat Detected in Low Prevalence Executable",
+      "id":1107296278,
+      "name":"\u5728\u4f4e\u666e\u904d\u6027\u53ef\u6267\u884c\u6587\u4ef6\u4e2d\u68c0\u6d4b\u5230\u5a01\u80c1"
+    },
+    {
+      "description":"Vulnerable Application Detected",
+      "id":1107296279,
+      "name":"\u68c0\u6d4b\u5230\u6613\u53d7\u653b\u51fb\u7684\u5e94\u7528"
+    },
+    {
+      "description":"The computer may have been compromised granting remote access.",
+      "id":1107296283,
+      "name":"\u53ef\u80fd\u7684 Webshell"
+    },
+    {
+      "description":"The computer may be infected with ransomware.",
+      "id":1107296284,
+      "name":"\u6f5c\u5728\u52d2\u7d22\u8f6f\u4ef6"
+    },
+    {
+      "description":"A suspicious file was downloaded.",
+      "id":1107296280,
+      "name":"\u53ef\u7591\u4e0b\u8f7d"
+    },
+    {
+      "description":"Potential dropper infections indicate a single file is repeatedly attempting to download malware onto a computer.",
+      "id":1107296257,
+      "name":"Potential Dropper Infection"
+    },
+    {
+      "description":"Multiple infected files indicate multiple files on a computer are attempting to download malware.",
+      "id":1107296258,
+      "name":"Multiple Infected Files"
+    },
+    {
+      "description":"A suspicious portable executable file was downloaded and executed by the Java plug-in.",
+      "id":1107296260,
+      "name":"Java \u5371\u5bb3"
+    },
+    {
+      "description":"A suspicious portable executable file was downloaded and executed by Adobe Reader.",
+      "id":1107296261,
+      "name":"Adobe Reader \u5371\u5bb3"
+    },
+    {
+      "description":"A suspicious portable executable file was downloaded and executed by Microsoft Word.",
+      "id":1107296262,
+      "name":"Microsoft Word \u5371\u5bb3"
+    },
+    {
+      "description":"A suspicious portable executable file was downloaded and executed by Microsoft Excel.",
+      "id":1107296263,
+      "name":"Microsoft Excel \u5371\u5bb3"
+    },
+    {
+      "description":"A suspicious portable executable file was downloaded and executed by Microsoft PowerPoint.",
+      "id":1107296264,
+      "name":"Microsoft PowerPoint \u5371\u5bb3"
+    },
+    {
+      "description":"A suspicious portable executable file was downloaded and executed by Microsoft Calculator.",
+      "id":1107296275,
+      "name":"Microsoft \u8ba1\u7b97\u5668\u5371\u5bb3"
+    },
+    {
+      "description":"A suspicious portable executable file was downloaded and executed by Microsoft Notepad.",
+      "id":1107296276,
+      "name":"Microsoft \u8bb0\u4e8b\u672c\u5371\u5bb3"
+    },
+    {
+      "description":"A suspicious portable executable file was downloaded and executed by Apple QuickTime.",
+      "id":1107296270,
+      "name":"Apple QuickTime \u5371\u5bb3"
+    },
+    {
+      "description":"A suspicious portable executable file was downloaded and executed by Microsoft CHM Compromise.",
+      "id":1107296281,
+      "name":"Microsoft CHM \u5371\u5bb3"
+    },
+    {
+      "description":"Java executed an unknown application, which in turn launched a command shell.",
+      "id":1107296265,
+      "name":"Java \u5df2\u542f\u52a8\u5916\u58f3"
+    },
+    {
+      "description":"Adobe Reader executed an unknown application, which in turn launched a command shell.",
+      "id":1107296266,
+      "name":"Adobe Reader \u5df2\u542f\u52a8\u5916\u58f3"
+    },
+    {
+      "description":"Microsoft Word executed an unknown application, which in turn launched a command shell.",
+      "id":1107296267,
+      "name":"Microsoft Word \u5df2\u542f\u52a8\u5916\u58f3"
+    },
+    {
+      "description":"Microsoft Excel executed an unknown application, which in turn launched a command shell.",
+      "id":1107296268,
+      "name":"Microsoft Excel \u5df2\u542f\u52a8\u5916\u58f3"
+    },
+    {
+      "description":"Microsoft PowerPoint executed an unknown application, which in turn launched a command shell.",
+      "id":1107296269,
+      "name":"Microsoft PowerPoint \u5df2\u542f\u52a8\u5916\u58f3"
+    },
+    {
+      "description":"Apple QuickTime executed an unknown application, which in turn launched a command shell.",
+      "id":1107296271,
+      "name":"Apple QuickTime \u5df2\u542f\u52a8\u5916\u58f3"
+    },
+    {
+      "description":"The computer executed known malware",
+      "id":1107296272,
+      "name":"\u5df2\u6267\u884c\u6076\u610f\u8f6f\u4ef6"
+    },
+    {
+      "description":"The computer made an outbound connection to a domain that is similar to randomly generated domains used by some malware command and control systems.",
+      "id":1107296277,
+      "name":"\u5230\u53ef\u7591\u57df\u7684\u8fde\u63a5"
+    },
+    {
+      "description":"Suspicious behavior that indicates possible compromise of the computer",
+      "id":1107296274,
+      "name":"\u901a\u7528 IOC"
+    },
+    {
+      "description":"It triggers when Internet Explorer launches Command Shell which in turn launches Microsoft Windows Script Host (aka cscript)",
+      "id":1107296282,
+      "name":"\u53ef\u7591 Cscript \u542f\u52a8"
+    },
+    {
+      "description":"It triggers when the new connector is installed but not running",
+      "id":1090519096,
+      "name":"\u66f4\u65b0\uff1a\u9700\u8981\u91cd\u65b0\u542f\u52a8"
+    },
+    {
+      "description":"It triggers when the new connector is installed and running but some new driver features will not be available until the system is rebooted",
+      "id":1090519097,
+      "name":"\u66f4\u65b0\uff1a\u5efa\u8bae\u91cd\u65b0\u542f\u52a8"
+    },
+    {
+      "description":"It triggers when the new connector is installed but not running for some unexpected scenario",
+      "id":2164260922,
+      "name":"\u66f4\u65b0\uff1a\u9700\u8981\u610f\u5916\u91cd\u65b0\u542f\u52a8"
+    },
+    {
+      "description":"The computer made outbound connections to suspected botnet command and control systems.",
+      "id":1107296273,
+      "name":"\u7591\u4f3c\u50f5\u5c38\u7f51\u7edc\u8fde\u63a5"
+    }
+  ],
+  "metadata":{
+    "links":{
+      "self":"https://api.apjc.amp.cisco.com/v1/event_types"
+    },
+    "results":{
+      "total":100
+    }
+  },
+  "version":"v1.1.0"
+}

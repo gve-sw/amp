@@ -1,0 +1,61 @@
+{
+  "data":[
+    {
+      "description":"Audit Group for Cisco- glquah",
+      "guid":"7c492f59-cf68-4b3e-a5c0-290027ac3348",
+      "links":{
+        "group":"https://api.apjc.amp.cisco.com/v1/groups/7c492f59-cf68-4b3e-a5c0-290027ac3348"
+      },
+      "name":"Audit",
+      "source":null
+    },
+    {
+      "description":"Domain Controller Group for Cisco- glquah",
+      "guid":"ab3de819-ff3f-4cff-96bb-7520ba4c43a0",
+      "links":{
+        "group":"https://api.apjc.amp.cisco.com/v1/groups/ab3de819-ff3f-4cff-96bb-7520ba4c43a0"
+      },
+      "name":"Domain Controller",
+      "source":null
+    },
+    {
+      "description":"Protect Group for Cisco- glquah",
+      "guid":"084c2cdf-dc80-4b1c-b889-53b26509033c",
+      "links":{
+        "group":"https://api.apjc.amp.cisco.com/v1/groups/084c2cdf-dc80-4b1c-b889-53b26509033c"
+      },
+      "name":"Protect",
+      "source":null
+    },
+    {
+      "description":"Server Group for Cisco- glquah",
+      "guid":"5aa35a4b-c7ce-49a1-b783-3df70345cd47",
+      "links":{
+        "group":"https://api.apjc.amp.cisco.com/v1/groups/5aa35a4b-c7ce-49a1-b783-3df70345cd47"
+      },
+      "name":"Server",
+      "source":null
+    },
+    {
+      "description":"Triage Group for Cisco- glquah",
+      "guid":"a8b6dd5b-1d62-444a-9c8b-50c2ca2989fe",
+      "links":{
+        "group":"https://api.apjc.amp.cisco.com/v1/groups/a8b6dd5b-1d62-444a-9c8b-50c2ca2989fe"
+      },
+      "name":"Triage",
+      "source":null
+    }
+  ],
+  "metadata":{
+    "links":{
+      "self":"https://api.apjc.amp.cisco.com/v1/groups"
+    },
+    "results":{
+      "current_item_count":5,
+      "index":0,
+      "items_per_page":500,
+      "total":5
+    }
+  },
+  "version":"v1.1.0"
+}
